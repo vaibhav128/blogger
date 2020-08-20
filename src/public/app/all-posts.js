@@ -33,7 +33,7 @@ function loadPosts() {
     .then((response) => response.json())
     .then((posts) => {
       for (let p of posts) {
-        getDomElementNode("#posts-container").insertAdjacentHTML(
+        document.querySelector("#posts-container").insertAdjacentHTML(
           "beforeend",
           `
       <div class="col-4">
