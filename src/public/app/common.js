@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   loader("#navbar", "/components/navbar.html", loginIfNeeded);
   loader("#footer", "/components/footer.html");
   loader("#content", "/components/all-posts.html");
-});
+  
+}) ;
 
 
 const setInnerHTML = function (element, html) {

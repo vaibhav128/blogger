@@ -15,6 +15,10 @@ navlinks.forEach(function(currentLink){
     console.log(event);
     let componentUrl = `/components/${event.target.dataset.component}.html`;
     console.log(componentUrl);
+    if(event.target.dataset.component === "all-posts" && loadAllPostsPage) {
+      // loader("#content", componentUrl);
+      return loadAllPostsPage()
+    }
     loader("#content", componentUrl);
   });
 })

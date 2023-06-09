@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/users", usersRoute);
 app.use("/api/posts", postsRoute);
+// app.use("/", express.static("./dist"));
 app.use("/", express.static(__dirname + "/public"));
 
 db.sync()

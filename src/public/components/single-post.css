@@ -1,0 +1,10 @@
+*:focus {
+    caret-color: red;
+}
+
+input:focus {
+    border: 0;
+    background: none;
+    
+}
+
