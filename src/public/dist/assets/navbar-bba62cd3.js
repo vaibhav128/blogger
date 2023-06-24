@@ -1,0 +1,1 @@
+let t=document.querySelectorAll(".navbar-nav .nav-link");console.log(t);t.forEach(function(n){n.addEventListener("click",o=>{console.log(o);let l=`/components/${o.target.dataset.component}.html`;if(console.log(l),o.target.dataset.component==="all-posts"&&loadAllPostsPage)return loadAllPostsPage();loader("#content",l)})});
