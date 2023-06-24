@@ -3,9 +3,10 @@ const loadPosts = async () => {
   const response = await fetch("/api/posts");
   const posts = await response.json();
   console.log("posts are", posts);
-
+  const postsContainer = document.querySelector("#posts-container")
+  postsContainer.innerHTML =''
   for (let p of posts) {
-    document.querySelector("#posts-container").insertAdjacentHTML(
+    postsContainer.insertAdjacentHTML(
       "beforeend",
       `
     <div class="col-4">
@@ -28,7 +29,7 @@ const loadPosts = async () => {
     );
   }
 
- /*  return fetch("/api/posts")
+  /*  return fetch("/api/posts")
     .then((response) => {
       console.log("inside first .then");
       return response.json();

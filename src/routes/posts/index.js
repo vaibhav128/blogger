@@ -4,6 +4,7 @@ const {
   createNewPost,
   findOnePost,
   deletePost,
+  editPost
 } = require("../../controllers/posts");
 const { commentsRoute } = require("./comments");
 

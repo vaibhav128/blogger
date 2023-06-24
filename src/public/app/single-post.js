@@ -47,63 +47,72 @@ import { fetchPostComments } from "/modules/fetch-post-comments.js";
   }; */
 
 const loadSinglePost = async (postId) => {
-  const {AttachCssLinkElement} = await import("/modules/load-css.js")
-   AttachCssLinkElement("/components/single-post.css");
+  const { AttachCssLinkElement } = await import("/modules/load-css.js");
+  AttachCssLinkElement("/components/single-post.css");
   await fetchPostcontent(postId);
   await fetchPostComments(postId);
   const { deletePost } = await import("/modules/delete-post.js");
   const { editPost } = await import("/modules/edit-post.js");
   deletePost();
-  editPost()
-
-
-  //   return fetch(`/api/posts/${postId}`)
-  //     .then((response) => {
-  //       console.log(response);
-  //       return response.json();
-  //     })
-  //     .then((post) => {
-  //       console.log(post, "single post");
-
-  //       document.querySelector("#posts-container").innerHTML = `
-  //    <div class="jumbotron">
-  //      <div>
-  //        <h1:post-title class="display-4 post-editable-content" >${post.title}</h1:post-title>
-  //      </div>
-  //      <h2 class="display-20 text-muted">${post.user.username}</h1>
-  //      <div>
-  //        <p:post-body class="lead post-editable-content">${post.body}</p:post-body>
-  //      </div>
-  //      <hr class="my-4">
-  //      <a class="btn btn-danger btn-lg" id="delete-post-btn" href="#" role="button" data-postid = "${post.id}">Delete</a>
-  //      <span>
-  //      <a class="btn btn-success btn-lg" id="edit-post-btn" href="#" role="button">edit post</a>
-  //      </span>
-  //    </div>
-  //    `;
-  //     })
-  //     .then(
-  //       fetch(`/api/posts/comment/${postId}`)
-  //         .then((response) => response.json())
-  //         .then((comments) => {
-  //           for (let comment of comments) {
-  //             console.log(comment);
-  //             document.querySelector("#posts-container").insertAdjacentHTML(
-  //               "beforeend",
-  //               `
-  //              <div class="col-12">
-  //          <h5 class=" text-muted">${comment.user.username}</h5>
-  //          <p class=" mb-4">
-  //            ${comment.body}
-  //          </p>
-  //          <a class="btn btn-danger btn-lg" href="#" role="button">Delete</a>
-  //          </div>
-  //  `
-  //             );
-  //           }
-  //         })
-  //     );
+  editPost();
 };
+
+const singlePostHtml = `<div class="container my-2">
+<div class="row" id="posts-container">
+</div>
+</div>
+<link rel="stylesheet" href="/components/single-post.css">
+`;
+
+export default singlePostHtml;
+export { loadSinglePost };
+//   return fetch(`/api/posts/${postId}`)
+//     .then((response) => {
+//       console.log(response);
+//       return response.json();
+//     })
+//     .then((post) => {
+//       console.log(post, "single post");
+
+//       document.querySelector("#posts-container").innerHTML = `
+//    <div class="jumbotron">
+//      <div>
+//        <h1:post-title class="display-4 post-editable-content" >${post.title}</h1:post-title>
+//      </div>
+//      <h2 class="display-20 text-muted">${post.user.username}</h1>
+//      <div>
+//        <p:post-body class="lead post-editable-content">${post.body}</p:post-body>
+//      </div>
+//      <hr class="my-4">
+//      <a class="btn btn-danger btn-lg" id="delete-post-btn" href="#" role="button" data-postid = "${post.id}">Delete</a>
+//      <span>
+//      <a class="btn btn-success btn-lg" id="edit-post-btn" href="#" role="button">edit post</a>
+//      </span>
+//    </div>
+//    `;
+//     })
+//     .then(
+//       fetch(`/api/posts/comment/${postId}`)
+//         .then((response) => response.json())
+//         .then((comments) => {
+//           for (let comment of comments) {
+//             console.log(comment);
+//             document.querySelector("#posts-container").insertAdjacentHTML(
+//               "beforeend",
+//               `
+//              <div class="col-12">
+//          <h5 class=" text-muted">${comment.user.username}</h5>
+//          <p class=" mb-4">
+//            ${comment.body}
+//          </p>
+//          <a class="btn btn-danger btn-lg" href="#" role="button">Delete</a>
+//          </div>
+//  `
+//             );
+//           }
+//         })
+//     );
+
 // function loadSinglePost(postId) {
 //   console.log(postId);
 //    return fetch(`/api/posts/${postId}`)
@@ -172,7 +181,6 @@ const loadSinglePost = async (postId) => {
 
 function setCaretPostionToEnd(element) {} */
 
-export { loadSinglePost };
 /*
 loadSinglePost(postId)
    .then(() => {

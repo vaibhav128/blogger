@@ -1,3 +1,4 @@
+
 import { loadPosts } from "/modules/load-posts.js";
 // function loadPosts() {
 //   $.get("/api/posts", (posts) => {
@@ -121,9 +122,8 @@ const loadAllPostsPage = async () => {
       event.preventDefault();
       // console.log(event.target.dataset.postid);
       const componentUrl = `/components/single-post.html`;
-
       const {loadSinglePost} = await import("/app/single-post.js");
-         
+
           console.log(loadSinglePost);
           loadSinglePost(event.target.dataset.postid);
 
