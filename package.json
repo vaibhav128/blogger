@@ -2,7 +2,7 @@
   "name": "blogging-app",
   "version": "1.0.0",
   "description": "A Blogging App to share knowledge with others",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
     "watch": "nodemon src/app.js"
@@ -12,6 +12,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "mysql2": "^2.1.0",
+    "pg": "^8.11.1",
+    "pg-hstore": "^2.3.4",
     "sequelize": "^5.21.7"
   },
   "devDependencies": {
